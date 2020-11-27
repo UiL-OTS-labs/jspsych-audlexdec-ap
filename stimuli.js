@@ -92,8 +92,7 @@ const LIST_GROUP1 = [
         wordfn: "./sounds/clown.wav",
         prime: "forest",
         primefn: "./sounds/forest.wav"
-    },
-
+    }
 ];
 
 
