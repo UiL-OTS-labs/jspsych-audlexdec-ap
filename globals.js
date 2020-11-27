@@ -2,13 +2,11 @@
 const FIXCROSS_DURATION = 1000;
 const INTERTRIAL_INTERVAL = 1000; //new
 
-const WORD_DURATION = 1000;
 const RESPONSE_TIMEOUT_DURATION = 2000; //auto, inluding audio playback duration?
+
 const FEEDBACK_DURATION = 1000;
 
 const PRIME_GAP_DURATION = 300;
-
-//const TRIAL_GAP_DURATION = 1000; -- ITI?
 
 // How many items of the same type may appear in series in case of pseudorandomisation
 const MAX_SUCCEEDING_ITEMS_OF_TYPE = 2;
