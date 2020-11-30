@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     
-    <title>Auditory Lexical Decision Experiment with auditory prime</title>
+    <title>Auditory Lexical Decision Experiment with Auditory Prime</title>
 
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
@@ -493,8 +493,8 @@
             type: 'audio-keyboard-response',
             stimulus: jsPsych.timelineVariable('primefn'),
             choices: jsPsych.NO_KEYS,
-            prompt: "<><><><><><><>",
-            trial_ends_after_audio: true, // check this with Iris?
+            prompt: "",
+            trial_ends_after_audio: true,
             post_trial_gap: PRIME_GAP_DURATION,
         };
 
@@ -533,7 +533,7 @@
             type: 'audio-keyboard-response',
             stimulus: jsPsych.timelineVariable('wordfn'), //this may nee inline func
             choices: present_word_choices,
-            prompt: "########",
+            prompt: "",
             trial_ends_after_audio: false,
             trial_duration: RESPONSE_TIMEOUT_DURATION,
             response_ends_trial: true,
