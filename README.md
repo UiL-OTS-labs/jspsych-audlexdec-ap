@@ -1,10 +1,22 @@
 # jspsych-audlexdec-ap
-Template [auditory lexical decision](https://en.wikipedia.org/wiki/Lexical_decision_task) experiment with auditory prime
+Auditory [lexical decision](https://en.wikipedia.org/wiki/Lexical_decision_task) experiment with Auditory Prime (template)
+
+# Connected templates
+
+### Visual Templates
+1. [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
+2. [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)
+3. [vislexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
+
+### Audio and/or visual Templates
+4. [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+5. [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+6. [audlexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-mp)
 
 # Task Description
+One of the variations of an Auditory Lexical Decision task. In this variation, a trial consists of two connected auditory 'test items', one is an auditory _prime_ word (or non-word), the other a second word (or non-word). The words are presented as a pair. After the second word, the participant is asked to respond --as soon as possible -- with keyboard keys and indicate wether _both_ heard words are real words or not.  
 
 ## Short description
-
 
 ## Longer description
 
