@@ -1,11 +1,8 @@
 // Default behavior of (sub) trial phases.
 const FIXCROSS_DURATION = 1000;
 const INTERTRIAL_INTERVAL = 1000; //new
-
 const RESPONSE_TIMEOUT_DURATION = 2000; //auto, inluding audio playback duration?
-
 const FEEDBACK_DURATION = 1000;
-
 const PRIME_GAP_DURATION = 300;
 
 // How many items of the same type may appear in series in case of pseudorandomisation
