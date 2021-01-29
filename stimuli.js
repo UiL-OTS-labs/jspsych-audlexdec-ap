@@ -1,13 +1,23 @@
+////////////////
+// STIMULI
+///////////////
+
 // Item types
 const NON_WORD = "NON_WORD";
 const RELATED = "RELATED";
-const UNRELATED = "UNRELATED"
+const UNRELATED = "UNRELATED";
+const PRACTICE = "PRACTICE";
 
-const GROUPS = [
-    "group1"
-    // "group2",
-    // "group3"
-];
+// name for lists, in this case one list, one item in the list
+const LISTS = ["my_one_and_only_list"];
+
+// In case of more complex design, the above could be, for example:
+
+// const LISTS = [
+//     "my_first_list",
+//     "my_second_list"
+// ];
+
 
 const PRACTICE_ITEMS = [
     {
@@ -16,7 +26,8 @@ const PRACTICE_ITEMS = [
         word: "palve", 
         wordfn: "./sounds/palve.wav",
         prime: "onion",
-        primefn: "./sounds/onion.wav"
+        primefn: "./sounds/onion.wav",
+        correct: 0
     },
     {
         id: 2, 
@@ -24,18 +35,20 @@ const PRACTICE_ITEMS = [
         word: "hot", 
         wordfn: "./sounds/hot.wav",
         prime: "stapler",
-        primefn: "./sounds/stapler.wav"
+        primefn: "./sounds/stapler.wav",
+        correct: 1
     }
 ];
 
-const LIST_GROUP1 = [
+const LIST_1 = [
     {
         id: 1, 
         item_type: NON_WORD, 
         word: "slirque", 
         wordfn: "./sounds/slirque.wav",
         prime: "eyes",
-        primefn: "./sounds/eyes.wav"
+        primefn: "./sounds/eyes.wav",
+        correct: 0
     },
     {
         id: 2, 
@@ -43,7 +56,8 @@ const LIST_GROUP1 = [
         word: "crawse", 
         wordfn: "./sounds/crawse.wav",
         prime: "piano",
-        primefn: "./sounds/piano.wav"
+        primefn: "./sounds/piano.wav",
+        correct: 0
     },
     {
         id: 3, 
@@ -51,7 +65,8 @@ const LIST_GROUP1 = [
         word: "thwurp", 
         wordfn: "./sounds/thwurp.wav",
         prime: "rabbit",
-        primefn: "./sounds/rabbit.wav"
+        primefn: "./sounds/rabbit.wav",
+        correct: 0
     },
     {
         id: 4, 
@@ -59,7 +74,8 @@ const LIST_GROUP1 = [
         word: "clem", 
         wordfn: "./sounds/clem.wav",
         prime: "flower",
-        primefn: "./sounds/flower.wav"
+        primefn: "./sounds/flower.wav",
+        correct: 0
     }, 
     {
         id: 5, 
@@ -67,7 +83,8 @@ const LIST_GROUP1 = [
         word: "white", 
         wordfn: "./sounds/white.wav",
         prime: "snow",
-        primefn: "./sounds/snow.wav"
+        primefn: "./sounds/snow.wav",
+        correct: 1
     },
     {
         id: 6, 
@@ -75,7 +92,8 @@ const LIST_GROUP1 = [
         word: "travel", 
         wordfn: "./sounds/travel.wav",
         prime: "suitcase",
-        primefn: "./sounds/suitcase.wav"
+        primefn: "./sounds/suitcase.wav",
+        correct: 1
     },
     {
         id: 7, 
@@ -83,7 +101,8 @@ const LIST_GROUP1 = [
         word: "letter", 
         wordfn: "./sounds/letter.wav",
         prime: "garden",
-        primefn: "./sounds/garden.wav"
+        primefn: "./sounds/garden.wav",
+        correct: 1
     },
     {
         id: 8, 
@@ -91,43 +110,40 @@ const LIST_GROUP1 = [
         word: "clown", 
         wordfn: "./sounds/clown.wav",
         prime: "forest",
-        primefn: "./sounds/forest.wav"
+        primefn: "./sounds/forest.wav",
+        correct: 1
     }
 ];
 
 
-// Add a second list of stimuli when required.
-// const LIST_GROUP2 = [
-// ...
-// ]
-
 const TEST_ITEMS = [
-    {group_name: GROUPS[0], table: LIST_GROUP1}
-    // Add the second group here, put a comma on the end of the line above here.
-    //{group_name: GROUPS[1], table: LIST_GROUP2}
-];
+    {list_name: LISTS[0], table: LIST_1}
+    ];
+   
+// If there were two lists to choose from:
+
+// const TEST_ITEMS = [
+//     {list_name: LISTS[0], table: LIST_1},
+//     {list_name: LISTS[1], table: LIST_2}
+// ];
 
 /**
  * Get the list of practice items
  *
- * Returns an object with a group and a table, the group will always indicate
+ * Returns an object with a list and a table, the list will always indicate
  * "practice" since it are the practice items
  *
- * @returns {object} object with group and table fields
+ * @returns {object} object with list and table fields
  */
 function getPracticeItems() {
-    return {group_name : "practice", table : PRACTICE_ITEMS};
+    return {list_name : "practice", table : PRACTICE_ITEMS};
 }
 
 /**
- * This function will pick a random group from the TEST_ITEMS array.
- *
- * Returns an object with a group and a table, the group will always indicate
- * which list has been chosen for the participant.
- *
- * @returns {object} object with group and table fields
+ * This function will pick a random list from the TEST_ITEMS array.
+ * @returns {object} object with one or more "lists" and table fields
  */
-function pickRandomGroup() {
+function pickRandomList() {
     let range = function (n) {
         let empty_array = [];
         let i;
@@ -136,9 +152,8 @@ function pickRandomGroup() {
         }
         return empty_array;
     }
-    let num_groups = TEST_ITEMS.length;
-    var shuffled_range = jsPsych.randomization.repeat(range(num_groups), 1)
-    var retgroup = TEST_ITEMS[shuffled_range[0]];
-    return retgroup
+    let num_lists = TEST_ITEMS.length;
+    var shuffled_range = jsPsych.randomization.repeat(range(num_lists), 1);
+    var retlist = TEST_ITEMS[shuffled_range[0]];
+    return retlist;
 }
-
