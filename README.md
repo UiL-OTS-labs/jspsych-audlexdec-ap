@@ -7,7 +7,6 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 # Task Description
 One of the variations of an Auditory Lexical Decision task. In this variation, a trial consists of two connected auditory 'test items', one is an auditory _prime_ word (or non-word), the other a second word (or non-word). The words are presented as a pair. After the second word, the participant is asked to respond --as soon as possible -- with keyboard keys and indicate wether _both_ heard words are real words or not.  
 
-## Short description
 # Output
 
 The data of _all_ (sub) _trial phases_ are logged in the data, but the output data can be filtered after data collection in many ways.
@@ -49,17 +48,40 @@ The crucial trial/sub-trial phase (decision phase) output may look similar to th
 	//(...)
 ```
 
+# Getting started (no experiment server set up)
 
-# Experiment data store (server setup)
+- Make sure you have a functioning internet connection!
+- Do this on a desktop PC or a laptop. Do _NOT_ use a mobile device, like a phone or tablet!
 
-Researchers and master students should be able log in to the (experiment data store)[https://experiment-datastore.lab.hum.uu.nl/] with their Solis ID. This application enables researchers to configure their jsPsych experiment to collect collect real 'production' data. The documentation for this process will appear in the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs).
-
-
-# Getting started (the easy way, working internet connection required)
-For now, the easiest way to test these templates, is:
+The easiest way to test a template _as is_:
 
 1. Download this repository by clicking the green code button above and Download zip.
 2. Unzip at a location of your choosing.
 3. Inside the folder is a file called index.html, double click it in order to open it
    in a browser.
+
+### Adapting stimuli
+- Open the file `stimuli.js` in your plain text editor.
+- There is a list, called LIST_1:
+
+```javacript
+const LIST_1 = [//...
+
+```
+-  This list can be adapted to your own needs, i.e, you can replace values, make the list longer (don't forget to increment the 'id' values for new items!).
+- If you need to implement a more complex design, you should read the `stimuli.js` file (and its comment sections) a little better. 
+- For an example of a Latin square design, please have a look [here](https://github.com/UiL-OTS-labs/jspsych-spr-mw) for some inspiration. 
+
+In short: you can add additional lists if your experiment requires this, but then you also have to edit some other values in stimuli.js in order for your experiment to work as intended.
+
+## Prepare for the data server setup (only for people affiliated to our lab!)
+
+### Updating access key
+In the file `globals.js` is a variable:
+```javascript
+const ACCESS_KEY = 'zeekretkey';
+```
+For uploading to the UiL-OTS data server you will need to change this to the access_key that you obtained when your experiment was approved. For elaborate info see `globals.js`.
+
+Good luck!
 
