@@ -6,7 +6,6 @@
  */
 
 // GENERERIC TESTS/CHECKS
-
 const GENERIC_CHECK = `
     <h3>In order to participate, please make sure that you:</h3>
     <BR>

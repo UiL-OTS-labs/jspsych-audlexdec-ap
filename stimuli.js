@@ -22,7 +22,7 @@ const LISTS = ["my_one_and_only_list"];
 const PRACTICE_ITEMS = [
     {
         id: 1, 
-        item_type: NON_WORD, 
+        item_type: PRACTICE, 
         word: "palve", 
         wordfn: "./sounds/palve.wav",
         prime: "onion",
@@ -31,7 +31,7 @@ const PRACTICE_ITEMS = [
     },
     {
         id: 2, 
-        item_type: UNRELATED, 
+        item_type: PRACTICE, 
         word: "hot", 
         wordfn: "./sounds/hot.wav",
         prime: "stapler",

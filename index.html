@@ -118,27 +118,20 @@
 
         // load stimuli
         let stimuli = pickRandomList();
-        //console.log("The selected list is %s", stimuli.list_name);
-        
-        // media preloading /////////////////////////////////////////////////////
-        var beep_audio = ['./sounds/beep.mp3'];
+        console.log("The selected list is %s", stimuli.list_name);
 
-        // create list of all audio files for preloading
-        var practice_audio = []; //here we want (paths to) audio files
+        ////////////////////////// media preloading ///////////////////////////////////////
         
+        var beep_audio = ['./sounds/beep.mp3']; 
         let practice_items = getPracticeItems().table; 
-        
+        var practice_audio = [];
         for (var i=0; i< practice_items.length; i++) {
             practice_audio.push(practice_items[i].primefn);
             practice_audio.push(practice_items[i].wordfn);
             console.log('loaded practice audio as "practice_audio"');
         };
-
-        // test audio list
-        var test_audio = []; // the same...
-        
+        var test_audio = [];
         let test_items = stimuli.table;
-        
         for (var i=0; i< test_items.length; i++) {
             test_audio.push(test_items[i].primefn);
             test_audio.push(test_items[i].wordfn);
@@ -398,27 +391,25 @@
         // Informed consent (consent.js)
         timeline.push(consent_procedure);
         
-        // survey
+        // survey (survey.js)
         timeline.push(survey_procedure);
         
         // kb layout
         timeline.push(select_keyboard_layout);
         
-        // kb important keys
+        // kb important keys (keyboard.js)
         timeline.push(keyboard_set_key_left_procedure);
         timeline.push(keyboard_set_key_right_procedure);
 
-        // test/set audio level
+        // test/set audio level (sountest.js)
         timeline.push(test_audio_looped);
         
-        // task instruction
+        // task instruction (instructions.js)
         timeline.push(instruction_screen_practice);
 
         // get ready (practice)
         timeline.push(participant_keyboard_control_start);
-        
         timeline.push(practice_procedure);
-
         timeline.push(well_done_screen);
 
         // get ready (test)
@@ -437,6 +428,7 @@
             jsPsych.init({
                 timeline: timeline,
                 preload_audio: [
+                    beep_audio,
                     practice_audio,
                     test_audio
                     ],
@@ -457,4 +449,3 @@
     })
     </script>
 </html>
-
