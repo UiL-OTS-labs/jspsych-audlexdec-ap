@@ -7,6 +7,12 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 # Task Description
 One of the variations of an Auditory Lexical Decision task. In this variation, a trial consists of two connected auditory 'test items', one is an auditory _prime_ word (or non-word), the other a second word (or non-word). The words are presented as a pair. After the second word, the participant is asked to respond --as soon as possible -- with keyboard keys and indicate wether _both_ heard words are real words or not.
 
+Crucial trial phases (sub trial phases):
+- Fixation cross
+- Auditory prime
+- Auditory decision (decision phase)
+
+
 ### Reference:
         Rubenstein, H., Garfield, L., & Millikan, J.A. (1970). 
         Homographic entries in the internal lexicon. 
