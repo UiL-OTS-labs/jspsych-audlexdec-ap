@@ -72,7 +72,7 @@ stimulus"           | stimulus (html)      |       | string/html    |           
 "useful_data_flag"  | Filter flag          |       | boolean        |                                      | no              | yes              | 
 _"expected_answer"_ | TODO change!         |       | todo           | Now (still) named "correct_response" | no              | no/yes/willbe.   | 
 "trial_type"        | What plugin was used |       |                |                                      | yes             |                  | "html-keyboard-response"
-"trial_index"       | jsPsych index        |       |                |                        	       | yes             |                  |	
+"trial_index"       | jsPsych index        |       |                |                        	           | yes             |                  |	
 "time_elapsed".     | jsPsych time object  | ms?   | int (/float?)  | For instance: 45062                  | yes             |                  |
 "internal_node_id.  | jsPsych node object  |       |                | For instance:"0.0-11.0-1.4"          | yes             |                  |
 "subject"           | Subject ID           |       |                | For instance: "8oo722dq"             |                 | yes              |
