@@ -60,8 +60,8 @@ The crucial trial/sub-trial phase (decision phase) output may look similar to th
 Variable name (key) | Description          | Unit  | Type           | Comments                             | jsPsych default | Template default | Plugin name
 --------------------|----------------------|-------|----------------|--------------------------------------|-----------------|------------------|------------
 "rt"                | Reaction Time        | ms.   | float          | Reaction time in milliseconds        | yes             |                  |            
-stimulus"           | stimulus (html)      |       | string/html    |                                      | yes             |                  |
-"key_press"         | Keyboard response    |       | string/object? | https://en.wikipedia.org/wiki/ASCII  | yes             |                  | html-keyboard-response
+"stimulus"          | stimulus (html)      |       | string/html    | Path to audio file                   | yes             |                  | audio-keyboard-response
+"key_press"         | Keyboard response    |       | string/object? | https://en.wikipedia.org/wiki/ASCII  | yes             |                  | audio-keyboard-response
 "condition"         | Condition            |       | string         | See ```stimuli.js```                 | no              | yes              |
 "word"              | Decision phase item  |       | string/html    | See ```stimuli.js, index.html```     | no              | yes              | 
 "word_file"         | Filename for "word"  |       | string         | For instance "./sounds/hot.wav".     | no              | yes              |
@@ -71,7 +71,7 @@ stimulus"           | stimulus (html)      |       | string/html    |           
 "trial_phase"       | Trial phase          |       |                | (...)                                | no              | yes              | 
 "useful_data_flag"  | Filter flag          |       | boolean        |                                      | no              | yes              | 
 _"expected_answer"_ | TODO change!         |       | todo           | Now (still) named "correct_response" | no              | no/yes/willbe.   | 
-"trial_type"        | What plugin was used |       |                |                                      | yes             |                  | "html-keyboard-response"
+"trial_type"        | What plugin was used |       |                |                                      | yes             |                  | "audio-keyboard-response"
 "trial_index"       | jsPsych index        |       |                |                        	           | yes             |                  |	
 "time_elapsed".     | jsPsych time object  | ms?   | int (/float?)  | For instance: 45062                  | yes             |                  |
 "internal_node_id.  | jsPsych node object  |       |                | For instance:"0.0-11.0-1.4"          | yes             |                  |
