@@ -9,7 +9,7 @@ const UNRELATED = "UNRELATED";
 const PRACTICE = "PRACTICE";
 
 // name for lists, in this case one list, one item in the list
-const LISTS = ["my_one_and_only_list"];
+const LISTS = ["Default Group"];
 
 // In case of more complex design, the above could be, for example:
 
