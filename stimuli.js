@@ -126,15 +126,3 @@ const TEST_ITEMS = [
 //     {list_name: LISTS[0], table: LIST_1},
 //     {list_name: LISTS[1], table: LIST_2}
 // ];
-
-/**
- * Get the list of practice items
- *
- * Returns an object with a list and a table, the list will always indicate
- * "practice" since it are the practice items
- *
- * @returns {object} object with list and table fields
- */
-function getPracticeItems() {
-    return {list_name : "practice", table : PRACTICE_ITEMS};
-}
