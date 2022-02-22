@@ -53,7 +53,12 @@ const SEX_QUESTION = `
     `;
 const SEX_OPTIONS = ["Female", "Male", "Other", "Prefer not to say"];
 const HAND_QUESTION = 'Which hand do you prefer to write with?';
-const HAND_OPTIONS = ["Left", "Right"];
+
+// Here, the hand options have been changed to something other
+// than Left or Right. This is rectified in getLeftOrRightHanded
+// in index.html.
+
+const HAND_OPTIONS = ["cn_left", "cn_right"];
 
 // The multi-choice survey plugin DOES have built-in validation, which is nice
 let survey_multi_choice_block = {

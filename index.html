@@ -196,8 +196,19 @@
             let datavalues = surveydata.values;
             let lastdatavalues = datavalues[datavalues.length - 1];
             let parsedvalues = JSON.parse(lastdatavalues);
-            handpref = parsedvalues.HandPreference;
-            return(parsedvalues.HandPreference);
+
+            // This is the part you should look at!
+            //
+            // The answer from the survey, which in this case might be
+            // cn_right, is now translated back into English to get the
+            // original function to work.
+
+            let hand_translation = {"cn_left": "Left", "cn_right": 'Right'};
+            let cn_handed = parsedvalues.HandPreference;
+            let handed = hand_translation[cn_handed];
+
+            // Also note the return statement has changed
+            return(handed);
         }
 
         function getCorrectKey()
