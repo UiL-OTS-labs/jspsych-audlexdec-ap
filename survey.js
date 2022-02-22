@@ -10,7 +10,7 @@ const MULTI_CHOICE_HTML =`
     <div class="survey">
 
     <label for="birth_year">In what year were you born? </label>
-    <input type="number" id="birth_year" 
+    <input type="number" id="birth_year"
         name="birth_year" placeholder=1999 min=1919 max=2019 required>
     <span class="validity"></span>
 
@@ -19,7 +19,7 @@ const MULTI_CHOICE_HTML =`
     <br>
 
     <label for="birth_month">In what month were you born? </label>
-    <input type="number" id="birth_month" name="birth_month" 
+    <input type="number" id="birth_month" name="birth_month"
         placeholder=7 min=1 max=12 required>
     <span class="validity"></span>
 
@@ -30,20 +30,20 @@ const MULTI_CHOICE_HTML =`
     <input type="text" id="native_language" name="native_language"
         placeholder="Dutch" required>
     <span class="validity"></span>
-    <br> 
-    <br> 
+    <br>
+    <br>
     </div>
     `
 
 // these constants are used in the survery multip[le choice block]
 // with this survey plugin, UU styling is not easy to implement
 const BILINGUAL_QUESTION = `
-    Were you born and raised in a  
+    Were you born and raised in a
     <a href="https://en.wikipedia.org/wiki/Multilingualism" target="_blank">multilingual</a>
     environment?
     `;
 const BILINGUAL_OPTIONS = ["No","Yes"];
-const DYSLEXIC_QUESTION = `Are you 
+const DYSLEXIC_QUESTION = `Are you
     <a href="https://en.wikipedia.org/wiki/Dyslexia" target="_blank">dyslexic</a>?
     `;
 const DYSLEXIC_OPTIONS = ["No", "Yes"];
@@ -92,7 +92,7 @@ let survey_multi_choice_block = {
         }
     ],
     on_finish: function(data){
-        let survey_multi_choice = data.responses;   
+        let survey_multi_choice = data.responses;
         data.survey_multi_choice_responses = survey_multi_choice;
     }
 };
@@ -112,12 +112,12 @@ let survey_review_survey_data = {
     type: "html-button-response",
     stimulus: function(data){
 
-        let survey_html = 
+        let survey_html =
             jsPsych.data.get().last(2).values()[0].survey_html_responses;
-        
-        let survey_multi = 
+
+        let survey_multi =
             jsPsych.data.get().last(1).values()[0].survey_multi_choice_responses;
-        
+
         let jsHTML = JSON.parse(survey_html);
         let b_year = jsHTML.birth_year;
         let b_month = jsHTML.birth_month;
@@ -151,7 +151,7 @@ let survey_review_survey_data = {
     on_finish: function(data){
         // Repeat the survey if yes (0) was not pressed.
         // this may give multiple entries, up to the researcher to filter out
-        repeat_survey = data.button_pressed != 0;         
+        repeat_survey = data.button_pressed != 0;
     }
 };
 
